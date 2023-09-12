@@ -1,0 +1,109 @@
+/*Page Rules*/
+html {
+    background: url('../images/site/small_check.jpg');
+}
+
+#wrapper {
+    background-color: var(--white);
+    border: solid var(--blue) 5px;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+/*Header Rules*/
+#my_account_a {
+    padding-right: 3em;
+    padding-left: 1em;
+}
+
+#top_header div {
+    padding-top: 1em;
+    padding-right: .5em;
+}
+
+
+/*Navigation Rules*/
+nav ul:first-child {
+    padding-left: .1em;
+}
+
+nav a,
+nav a:first-of-type {
+    padding: .8em;
+}
+
+/*Home Page*/
+/*Delorean Section*/
+#delorean_text {
+    padding-left: 50px;
+}
+
+/* Table rules */
+th,
+td {
+    padding: 1em;
+}
+
+/* Inventory Display */
+#inv-display {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 5%;
+}
+
+#inv-display h2 {
+    font-size: 1rem;
+    height: 45px;
+}
+
+#inv-display li {
+    max-width: 200px;
+    flex: 1 0 auto;
+    text-align: center;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.image-info-link {
+    margin-bottom: auto;
+}
+
+#inv-display div {
+    width: 100%;
+}
+
+.no-image {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+}
+
+.display-line {
+    width: 100%;
+}
+
+/* Vehicle Information*/
+#details :nth-child(even) {
+    background-color: var(--lt_gray);
+}
+#details :nth-child(1n+2){
+    padding: 10px;
+}
+/* Vehicle Information */
+#information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.thumbnail-header {
+    display: none;
+}
+
+.thumbnails img:hover {
+    width: 210px;
+}
