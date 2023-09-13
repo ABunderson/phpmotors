@@ -44,9 +44,11 @@ switch ($action) {
     case "newClassification":
         include '../view/new-classification.php';
         break;
+
     case "newVehicle":
         include '../view/new-vehicle.php';
         break;
+
     case "addClassification":
         //Check to see if it got to the right case
         //echo "reached the case statement";
@@ -65,6 +67,7 @@ switch ($action) {
             $message = "<p class='bad'>Please provide information for all empty form fields.</p>";
             include '../view/new-classification.php';
             exit;
+
         } elseif (empty($checkClassification)) {
             $message = "<p class='bad'>That name is too long. Please try again.</p>";
             include '../view/new-classification.php';
@@ -85,6 +88,7 @@ switch ($action) {
         }
 
         break;
+
     case "addVehicle":
         //echo "entered the add vehicle switch case";
         $invMake = trim(filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
@@ -121,7 +125,8 @@ switch ($action) {
         }
 
         break;
-    case "getInventoryItems":
+
+    case "getInventoryItems": 
 
         // get classificationId
         $classificationId = trim(filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT));
@@ -133,6 +138,7 @@ switch ($action) {
         echo json_encode($inventoryArray);
 
         break;
+
     case "mod":
         $invId = trim(filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT));
         $invInfo = getInvItemInfo($invId);
@@ -141,8 +147,8 @@ switch ($action) {
         }
         include '../view/vehicle-update.php';
         exit;
-
         break;
+
     case "del":
         $invId = trim(filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT));
         $invInfo = getInvItemInfo($invId);
@@ -152,6 +158,7 @@ switch ($action) {
         include '../view/vehicle-delete.php';
         exit;
         break;
+
     case "updateVehicle":
         // echo "entered the update vehicle switch case";
         // exit;
@@ -192,6 +199,7 @@ switch ($action) {
             exit;
         }
         break;
+
     case "deleteVehicle":
         // echo "entered the delete vehicle switch case";
         // exit;
@@ -219,6 +227,7 @@ switch ($action) {
             exit;
         }
         break;
+
     case "classification":
         $classificationName = trim(filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $vehicles = getVehiclesByClassification($classificationName);
@@ -235,6 +244,7 @@ switch ($action) {
 
         include '../view/classification.php';
         break;
+
     case "information":
         $invId = trim(filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT));
         $vehicleInfo = getVehicleDetail($invId);
@@ -265,9 +275,8 @@ switch ($action) {
         
         include '../view/vehicle-detail.php';
         break;
+
     default:
         $classificationList = buildClassificationList($classifications);
-
-
         include '../view/vehicle-management.php';
 }

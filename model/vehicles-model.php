@@ -1,5 +1,5 @@
 <?php
-//This is the Vehicle Model
+//This is the Vehicle Model 
 
 // Function for inserting a new classification into the carclassifications table
 function newClassification($classificationName)
@@ -15,7 +15,7 @@ function newClassification($classificationName)
     $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
     //Insert the data
     $stmt->execute();
-    // Ask how many rosw changed as a result of our insert
+    // Ask how many rows changed as a result of our insert
     $rowsChanged = $stmt->rowCount();
     // Close the database interaction
     $stmt->closeCursor();
